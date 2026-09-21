@@ -1,0 +1,82 @@
+
+
+
+<div class="row">
+  <div class="row-1"></div>
+  <div class="row-10">
+    <div class="text-center">
+      <br>
+      <br>
+      <h1>Time Meter</h1>
+     <h2>Current Time : {{ currentTime | date:'dd MMMM yyyy HH:mm:ss' }}</h2>
+      <br>
+      <br>
+    </div>
+<app-my-progress
+  [label]="'Second'"
+  [min]="0"
+  [max]="59"
+  [value]="currentSecond"
+  [parentValue]="currentMinute"
+  [maxParentValue]="59"
+  [startValue]="0"
+
+/>
+    <br>
+    <app-my-progress
+      [label]="'Minute'"
+      [min]="0"
+      [max]="59"
+      [value]="currentMinute"
+      [parentValue]="currentHour"
+      [maxParentValue]="59"
+      [startValue]="0"
+      [bgColor]="'bg-primary'"
+    />
+    <br>
+    <app-my-progress
+      [label]="'Hour'"
+      [min]="0"
+      [max]="23"
+      [value]="currentHour"
+      [parentValue]="currentDay"
+      [maxParentValue]="getDayOfMonth(currentMonth,currentYear)"
+      [startValue]="0"
+      [bgColor]="'bg-info'"
+    />
+    <br>
+    <app-my-progress
+      [label]="'Day'"
+      [min]="0"
+      [max]="getDayOfMonth(currentMonth,currentYear)"
+      [value]="currentDay"
+      [parentValue]="currentMonth"
+      [maxParentValue]="13"
+      [startValue]="1"
+      [bgColor]="'bg-warning'"
+    />
+    <br>
+    <app-my-progress
+      [label]="'Month'"
+      [min]="0"
+      [max]="12"
+      [value]="currentMonth"
+      [parentValue]="currentYear"
+      [maxParentValue]="999999999"
+      [startValue]="1"
+      [bgColor]="'bg-danger'"
+    />
+    <br>
+    <app-my-progress
+      [label]="'Day Of Year'"
+      [min]="0"
+      [max]="getDayOfYear(currentYear)"
+      [value]="getCurrentDayOfYear()"
+      [parentValue]="currentYear"
+      [maxParentValue]="999999999"
+      [startValue]="1"
+      [bgColor]="'bg-secondary'"
+    />
+  </div>
+  <div class="row-1"></div>
+</div>
