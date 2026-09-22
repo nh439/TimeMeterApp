@@ -1,3 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+:root {
+  --bg-1: #e8eef7;
+  --bg-2: #dfe7f4;
+  --panel: #edf3fb;
+  --panel-strong: #e3ebf8;
+  --soft-shadow: #c9d4e5;
+  --strong-shadow: #ffffff;
+  --text: #24324a;
+  --muted: #526680;
+  --primary: #5b8def;
+  --secondary: #7aaef7;
+  --accent: #f3b865;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}

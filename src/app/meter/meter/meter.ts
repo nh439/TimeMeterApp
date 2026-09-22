@@ -83,4 +83,10 @@ getCurrentDayOfYear(date: Date = new Date()): number {
 
     return Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
   }
+  getCurrentSecondOfDay(){
+    return (this.currentHour*3600)+(this.currentMinute*60)+this.currentSecond;
+  }
+  GetSecondOfDay(){
+    return 86400;
+  }
 }

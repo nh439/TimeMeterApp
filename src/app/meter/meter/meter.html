@@ -1,82 +1,91 @@
 
 
-
-<div class="row">
-  <div class="row-1"></div>
-  <div class="row-10">
-    <div class="text-center">
-      <br>
-      <br>
+<div class="meter-shell">
+  <div class="meter-panel">
+    <header class="meter-header">
+      <p class="eyebrow">Live time overview</p>
       <h1>Time Meter</h1>
-     <h2>Current Time : {{ currentTime | date:'dd MMMM yyyy HH:mm:ss' }}</h2>
-      <br>
-      <br>
-    </div>
-<app-my-progress
-  [label]="'Second'"
-  [min]="0"
-  [max]="59"
-  [value]="currentSecond"
-  [parentValue]="currentMinute"
-  [maxParentValue]="59"
-  [startValue]="0"
+      <h2>{{ currentTime | date:'dd MMMM yyyy HH:mm:ss' }}</h2>
+    </header>
 
-/>
-    <br>
-    <app-my-progress
-      [label]="'Minute'"
-      [min]="0"
-      [max]="59"
-      [value]="currentMinute"
-      [parentValue]="currentHour"
-      [maxParentValue]="59"
-      [startValue]="0"
-      [bgColor]="'bg-primary'"
-    />
-    <br>
-    <app-my-progress
-      [label]="'Hour'"
-      [min]="0"
-      [max]="23"
-      [value]="currentHour"
-      [parentValue]="currentDay"
-      [maxParentValue]="getDayOfMonth(currentMonth,currentYear)"
-      [startValue]="0"
-      [bgColor]="'bg-info'"
-    />
-    <br>
-    <app-my-progress
-      [label]="'Day'"
-      [min]="0"
-      [max]="getDayOfMonth(currentMonth,currentYear)"
-      [value]="currentDay"
-      [parentValue]="currentMonth"
-      [maxParentValue]="13"
-      [startValue]="1"
-      [bgColor]="'bg-warning'"
-    />
-    <br>
-    <app-my-progress
-      [label]="'Month'"
-      [min]="0"
-      [max]="12"
-      [value]="currentMonth"
-      [parentValue]="currentYear"
-      [maxParentValue]="999999999"
-      [startValue]="1"
-      [bgColor]="'bg-danger'"
-    />
-    <br>
-    <app-my-progress
-      [label]="'Day Of Year'"
-      [min]="0"
-      [max]="getDayOfYear(currentYear)"
-      [value]="getCurrentDayOfYear()"
-      [parentValue]="currentYear"
-      [maxParentValue]="999999999"
-      [startValue]="1"
-      [bgColor]="'bg-secondary'"
-    />
+    <div class="meter-list">
+      <app-my-progress
+        [label]="'Second'"
+        [min]="0"
+        [max]="59"
+        [value]="currentSecond"
+        [parentValue]="currentMinute"
+        [maxParentValue]="59"
+        [startValue]="0"
+      />
+
+      <app-my-progress
+        [label]="'Minute'"
+        [min]="0"
+        [max]="59"
+        [value]="currentMinute"
+        [parentValue]="currentHour"
+        [maxParentValue]="59"
+        [startValue]="0"
+        [bgColor]="'bg-primary'"
+      />
+
+      <app-my-progress
+        [label]="'Hour'"
+        [min]="0"
+        [max]="23"
+        [value]="currentHour"
+        [parentValue]="currentDay"
+        [maxParentValue]="getDayOfMonth(currentMonth,currentYear)"
+        [startValue]="0"
+        [bgColor]="'bg-info'"
+      />
+
+      <app-my-progress
+        [label]="'Day'"
+        [min]="0"
+        [max]="getDayOfMonth(currentMonth,currentYear)"
+        [value]="currentDay"
+        [parentValue]="currentMonth"
+        [maxParentValue]="13"
+        [startValue]="1"
+        [bgColor]="'bg-warning'"
+      />
+
+      <app-my-progress
+        [label]="'Month'"
+        [min]="0"
+        [max]="12"
+        [value]="currentMonth"
+        [parentValue]="currentYear"
+        [maxParentValue]="999999999"
+        [startValue]="1"
+        [bgColor]="'bg-danger'"
+      />
+
+      <div class="divider"></div>
+
+      <app-my-progress
+        [label]="'Day Of Year'"
+        [min]="0"
+        [max]="getDayOfYear(currentYear)"
+        [value]="getCurrentDayOfYear()"
+        [parentValue]="currentYear"
+        [maxParentValue]="999999999"
+        [startValue]="1"
+        [bgColor]="'bg-secondary'"
+      />
+
+      <app-my-progress
+        [label]="'Second Of Day'"
+        [min]="0"
+        [max]="GetSecondOfDay()"
+        [value]="getCurrentSecondOfDay()"
+        [parentValue]="currentDay"
+        [maxParentValue]="getDayOfMonth(currentMonth,currentYear)"
+        [startValue]="1"
+        [bgColor]="'bg-secondary'"
+      />
+    </div>
   </div>
-  <div class="row-1"></div>
 </div>

@@ -1,0 +1,58 @@
+.meter-shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 32px 20px;
+}
+
+.meter-panel {
+  width: min(920px, 100%);
+  padding: 28px 28px 18px;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #edf3fb, #dfe8f5);
+  box-shadow:
+    18px 18px 32px rgba(166, 180, 200, 0.45),
+    -18px -18px 32px rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.meter-header {
+  text-align: center;
+  padding: 12px 18px 22px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #61728c;
+}
+
+.meter-header h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #22314d;
+}
+
+.meter-header h2 {
+  margin: 18px 0 0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: #4d5d78;
+}
+
+.meter-list {
+  display: grid;
+  gap: 18px;
+}
+
+.divider {
+  margin: 8px 0;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(93, 117, 157, 0.4), transparent);
+}
