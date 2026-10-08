@@ -16,4 +16,8 @@ export class MyProgressComponent {
   label = input<string>('');
   bgColor = input<string>('bg-success')
 
+  numberWithCommas(x : number) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
 }
